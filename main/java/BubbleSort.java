@@ -83,6 +83,40 @@ public class BubbleSort {
        System.out.println(eor+" "+onlyOne);
    }
 
+   public static void mergeSort(int[] arr,int left,int mid,int right){
+       if(arr == null || arr.length < 2) {
+           return;
+       }
+       int[] help=new int[right-left+1];
+       int i=0;
+       int p1=left;
+       int p2=mid+1;
+       while(p1<=mid&&p2<=right){
+          help[i++]=arr[p1]<=arr[p2]?arr[p1++]:arr[p2++];
+       }
+       while(p1<=mid) {
+           help[i++] = arr[p1++];
+       }
+       while(p2<=right) {
+           help[i++] = arr[p2++];
+       }
+       for(i=0;i<help.length;i++){
+           arr[left+i]=help[i];
+       }
+   }
+
+   public static void process(int[] arr,int L,int R){
+        if(L==R){
+            return;
+        }
+        int mid=L+((R-L)>>1);
+        process(arr,L,mid);
+        process(arr,mid+1,R);
+        mergeSort(arr,L,mid,R);
+   }
+
+
+
     public static void main(String[] args) {
         int[] arr={1,2,5,3,8,6};
         insertSort(arr);
