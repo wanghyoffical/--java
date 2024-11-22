@@ -25,7 +25,7 @@ public class MaxHeap {
     }
 
     public static void heapSort(int[] arr){
-       if(arr==null || arr.length<2) {
+       if(arr==null || arr.length<2){
            return;
        }
        //o(n)的时间复杂度

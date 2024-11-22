@@ -91,7 +91,7 @@ public class BubbleSort {
        int i=0;
        int p1=left;
        int p2=mid+1;
-       while(p1<=mid&&p2<=right){
+       while(p1<=mid&&p2<=right){ 
           help[i++]=arr[p1]<=arr[p2]?arr[p1++]:arr[p2++];
        }
        while(p1<=mid) {
